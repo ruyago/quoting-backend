@@ -4,7 +4,8 @@ const { Schema, model } = mongoose;
 const quoteSchema = new Schema({
   title: String,
   description: String,
-  // owner will be added later on
+  owner: String,
+  
 });
 
 module.exports = model("Quote", quoteSchema);

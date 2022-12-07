@@ -7,9 +7,9 @@ const Quote = require("../models/quote.model");
 
 //  POST /api/my-quotes  -  Creates a new quote
 router.post("/my-quotes", (req, res, next) => {
-  const { title, description } = req.body;
+  const { title, description,owner } = req.body;
 
-  Quote.create({ title, description})
+  Quote.create({ title, description, owner})
     .then((response) => res.json(response))
     .catch((err) => res.json(err));
 });
