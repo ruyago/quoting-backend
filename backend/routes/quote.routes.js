@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 
 const Quote = require("../models/quote.model");
+const User = require ("../models/User.model");
 
 
 //  POST /api/my-quotes  -  Creates a new quote
@@ -21,6 +22,9 @@ router.get("/my-quotes", (req, res, next) => {
     .then((allQuotes) => res.json(allQuotes))
     .catch((err) => res.json(err));
 });
+
+
+
 
 //  GET /api/my-quotes/:quoteId -  Retrieves a specific quote by id
 router.get("/my-quotes/:quoteId", (req, res, next) => {

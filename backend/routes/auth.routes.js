@@ -8,6 +8,13 @@ const { isAuthenticated } = require('./../middleware/jwt.middleware.js');
 const router = express.Router();
 const saltRounds = 10;
 
+//  GET /userslist -  Retrieves all the users
+router.get("/userslist", (req, res, next) => {
+  User.find()
+
+    .then((allUsers) => res.json(allUsers))
+    .catch((err) => res.json(err));
+});
 
 // POST /auth/signup  - Creates a new user in the database!!!!
 router.post('/signup', (req, res, next) => {
