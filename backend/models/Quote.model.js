@@ -5,6 +5,7 @@ const quoteSchema = new Schema({
   title: String,
   description: String,
   owner: String,
+  likes: Number,
   
 });
 

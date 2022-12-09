@@ -16,6 +16,8 @@ app.use("/api", allRoutes);
 const quoteRouter = require("./routes/quote.routes");
 app.use("/api", isAuthenticated, quoteRouter);
 
+const likesRouter = require("./routes/likes.routes");
+app.use("/api", likesRouter);
 
 const authRouter = require("./routes/auth.routes");
 app.use("/auth", authRouter);
