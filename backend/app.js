@@ -10,14 +10,17 @@ require("./config")(app);
 
 
 // 👇 Start handling routes here
-const allRoutes = require("./routes");
-app.use("/api", allRoutes);
+// const allRoutes = require("./routes");
+// app.use("/api", allRoutes);
 
 const quoteRouter = require("./routes/quote.routes");
 app.use("/api", quoteRouter);
 
 const likesRouter = require("./routes/likes.routes");
 app.use("/api", likesRouter);
+
+const favRouter = require("./routes/favourites.routes");
+app.use("/", favRouter);
 
 const authRouter = require("./routes/auth.routes");
 app.use("/auth", authRouter);
